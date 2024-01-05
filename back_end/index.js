@@ -36,7 +36,7 @@ app.post('/api/register',upload.single('image'),async(req,res)=>{
                const newUser = new UserModel(user);
           
                await newUser.save();
-               res.status(200).json({"Msg":"User acount created successfully"})
+               res.status(200).json({"Msg":"User account created successfully"})
 
             }catch(err){
                res.status(400).send({"Error":err});
