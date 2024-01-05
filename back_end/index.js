@@ -1,13 +1,32 @@
 const express = require('express');
 const { connection } = require('mongoose');
 const { UserRouter } = require('./routes/userPage');
+const multer = require('multer');
+
 const cors = require('cors');
 
 const app = express();
 
 
 app.use(cors());
-app.use('/users',UserRouter);
+
+
+// Configure Multer for file upload
+const storage = multer.memoryStorage();
+const upload = multer({ storage: storage });
+
+app.post('/api/register',upload.single('image'),async(req,res)=>{
+  
+  try {
+      const {avatar} = req.body;
+
+      
+  } catch (error) {
+      
+  }
+ 
+
+})
 
 
 
