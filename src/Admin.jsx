@@ -52,13 +52,13 @@ const StyledDIV= styled.div`
     box-sizing: border-box;
 }
 
-width: 100%;
+
 background-color: #F8F8F8;
 display: flex;
 `
 
 const SideDIV = styled.div`
-width: 230px;
+width: 20%;
 background:#FFF;
 
 &>p:nth-child(1){
@@ -123,17 +123,18 @@ gap: 41px;
 `
 
 const LeftSideDIV = styled.div`
-border: 1px solid black;
-
+/* border: 1px solid black; */
+width: 100%;
 div.NavDIV{
     display: flex;
-    width: 1129px;
+    width: 90%;
     justify-content: space-between;
     align-items: center;
     background: transparent;
     margin-left: 41px;
     margin-right: 101px;
     margin-top: 56.1px;
+
 }
 
 div.NavDIV >div:nth-child(1){
