@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { styled } from 'styled-components';
-
+import SelectOptions from './Components/SelectOptions';
+import {filterBy,gender,category,sortBy} from './Constants/constants'
 
 export const Admin = () => {
     const [activeDiv, setActiveDiv] = useState(null);
@@ -12,6 +13,9 @@ export const Admin = () => {
      
    const SidebarDivs = arr.map((e,index)=> <div key={index}   className={index==activeDiv?'active':""} onClick={()=>setActiveDiv(index)}  ><img src={e.src}  alt="" /><p>{e.name}</p></div>)
 
+   
+
+   
     return (
         <StyledDIV>
             <SideDIV>
@@ -38,6 +42,12 @@ export const Admin = () => {
                    </div>
                  </div>
                 </div>
+
+                <FILTERS>
+                 <SelectOptions names={gender}   filterBy={filterBy[0]}/>
+                 <SelectOptions names={category} filterBy={filterBy[1]}/>
+                 <SelectOptions names={sortBy}   filterBy={filterBy[2]}/>
+                </FILTERS>
             </LeftSideDIV>
         </StyledDIV>
     );
@@ -58,7 +68,7 @@ display: flex;
 `
 
 const SideDIV = styled.div`
-width: 20%;
+width: 230px;
 background:#FFF;
 
 &>p:nth-child(1){
@@ -71,6 +81,7 @@ line-height: normal;
 /* margin-top: 63px; */
 margin-bottom: 0px;
 margin-left: 18px;
+margin-right: 9px;
 }  
 
 
@@ -127,7 +138,7 @@ const LeftSideDIV = styled.div`
 width: 100%;
 div.NavDIV{
     display: flex;
-    width: 90%;
+    width: 1129px;
     justify-content: space-between;
     align-items: center;
     background: transparent;
@@ -192,6 +203,15 @@ div.NavDIV >div:nth-child(1)>img{
     border-radius: 10px;
     background: url('/Data/SideBarLogos/Profile_Avtar.png'), lightgray 50% / cover no-repeat;
  }
+`
 
-
+const FILTERS = styled.div`
+    display: flex;
+    margin: auto;
+    /* border: 1px solid black; */
+    width: fit-content;
+    margin-left: 61px;
+    margin-top: 33.9px;
+    /* gap: 60.8px; */
+   
 `
